@@ -1,0 +1,94 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "description": "This is an example of Rest API with Python and Flask.",
+      "version": "1.0.0",
+      "title": "Example Rest API",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "servers": [
+      {
+        "url": "/api/v1/"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Book Request",
+        "description": "Example API for requesting and return book requests"
+      }
+    ],
+    "paths": {
+      "/hello-world": {
+        "get": {
+          "tags": [
+            "Hello World Request"
+          ],
+          "summary": "Returns Hello World Message",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/components/schemas/helloWorldRequest"
+              }
+            }
+          }
+        }
+      },
+      "/joke": {
+        "get": {
+          "tags": [
+            "Random Programming Message Request"
+          ],
+          "summary": "Get a programming message request",
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/components/schemas/MessageRequest"
+              }
+            },
+            "503": {
+              "description": "Failed. Service Unavailable."
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "helloWorldRequest": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "format": "string"
+            }
+          }
+        },
+        "MessageRequest": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "number",
+              "format": "number"
+            },
+            "type": {
+              "type": "string",
+              "format": "email"
+            },
+            "setup": {
+              "type": "string",
+              "format": "number"
+            },
+            "punchline": {
+                "type": "string",
+                "format": "number"
+              }
+          }
+        }
+      }
+    }
+  }
