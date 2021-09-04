@@ -13,7 +13,7 @@ Clone the repo:
 
 Create virtualenv:
 
-    virtualenv {env_name}
+    virtualenv {env_name} or python3 -m venv {env_name}
     source {env_name}/bin/activate
     pip install -r requirements.txt
 
